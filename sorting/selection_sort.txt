@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+#include <limits.h>
+
+using namespace std;
+
+int main()
+{
+    vector<int> arr
+    {
+        4,6,2,7,9
+    };
+    int n = arr.size();;
+    for(int i=0;i<=n-2;i++){
+        
+        int smallest = i;
+        for(int j=i+1;j<=n-1;j++){
+            if(arr[j]<arr[smallest]){
+                smallest = j;
+            }
+        }
+ // if statement below can be omitted and only swap can be executed
+        if (arr[i]> arr[smallest]){
+            swap(arr[i], arr[smallest]);
+        }
+    }
+    for(int r=0;r<n;r++){
+        cout<<arr[r];
+    }
+    return 0;
+}
